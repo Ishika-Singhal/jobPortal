@@ -7,6 +7,7 @@ import { Suspense } from 'react'
 import Loading from './loading'
 import Header from '@/components/Header'
 import { currentUser } from '@clerk/nextjs/server'
+import { fetchProfile } from '@/actions'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,13 +26,14 @@ export const metadata = {
 
 export default async function RootLayout({children }) {
 const user = await currentUser();
+const profileInfo = await fetchProfile(user?.id)
 
   return (
     <ClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased container px-6`} suppressHydrationWarning>
           <Suspense  fallback={<Loading/>}>
-          <Header user={JSON.parse(JSON.stringify(user))}/>
+          <Header user={JSON.parse(JSON.stringify(user))} profileInfo={profileInfo}/>
           {children}
           </Suspense>
         </body>

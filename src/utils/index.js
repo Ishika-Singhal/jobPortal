@@ -6,8 +6,8 @@ export const recruiterOnboardFormControls = [
     placeholder: "Enter your Name",
   },
   {
-    name: "Company Name",
-    label: "companyName",
+    name: "companyName",
+    label: "Company Name",
     componentType: "input",
     placeholder: "Enter your Company Name",
   },
@@ -23,7 +23,7 @@ export const initialRecruiterFormData = {
   name: "",
   companyName: "",
   companyRole: "",
-  isPremiumUser:false,
+  
 };
 
 export const candidateOnboardFormContols = [
@@ -135,5 +135,5 @@ export const initialCandidateFormData={
    currentJobLocation:"",
    currentSalary:"",
    preferedJobLocation:"",
-   isPremiumUser:false
+
 }

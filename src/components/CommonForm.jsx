@@ -10,7 +10,7 @@ const CommonForm = ({
   isBtnDisabled,
   btntype,
   formData,
-  setformData,
+  setFormData,
   handleFileChange,
 }) => {
   function renderInputByComponentType(getCurrentControl) {
@@ -27,7 +27,7 @@ const CommonForm = ({
               id={getCurrentControl.name}
               value={formData[getCurrentControl.name]}
               onChange={(event) =>
-                setformData({
+                setFormData({
                   ...formData,
                   [event.target.name]: event.target.value,
                 })
@@ -63,7 +63,7 @@ const CommonForm = ({
               id={getCurrentControl.name}
               value={formData[getCurrentControl.name]}
               onChange={(event) =>
-                setformData({
+                setFormData({
                   ...formData,
                   [event.target.name]: event.target.value,
                 })
@@ -76,14 +76,15 @@ const CommonForm = ({
     return content;
   }
 
+
   return (
     <form action={action}>
       {formControls.map((control) => renderInputByComponentType(control))}
       <div className="mt-6 w-full">
         <Button
-          disabled={isBtnDisabled}
           type={btntype || "submit"}
           className="disabled:opacity-60 flex h-11 items-center justify-center px-5"
+          disabled={isBtnDisabled}
         >
           {buttonText}
         </Button>
