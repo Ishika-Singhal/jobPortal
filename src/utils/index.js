@@ -137,3 +137,61 @@ export const initialCandidateFormData={
    preferedJobLocation:"",
 
 }
+
+
+export const postNewJobFormControls=[
+  {
+    name: "companyName",
+    label: "Company Name",
+    componentType: "input",
+    placeholder: "Enter your Company Name",
+    disabled:true
+  },
+  {
+    label:"Title",
+    name: "title",
+    componentType: "input",
+    placeholder: "Enter your Job Title",
+  },
+  {
+    name: "jobDescription",
+    label: "Job Description",
+    componentType: "textarea",  
+    placeholder: "Enter your Job Description",
+  },
+  {
+    name: "location",
+    label: "Location",
+    componentType: "input",
+    placeholder: "Enter your Job Location",
+  },
+  {
+    name: "experience",
+    label: "Experience",
+    componentType: "input",
+    placeholder: "Enter your Job Experience",
+  },
+  {
+    name: "skills",
+    label: "Skills",
+    componentType: "input",
+    placeholder: "Enter your Job Skills",
+  },{
+    name: "type",
+    label: "Job Type",
+    componentType: "input",
+    placeholder: "Enter your Job Type",
+
+  }
+]
+
+export const initialPostNewJobFormData={
+campanyName:"",
+title:"",
+type:"",
+location:"",
+experience:"",
+jobDescription:"",
+skills:"",
+
+}
