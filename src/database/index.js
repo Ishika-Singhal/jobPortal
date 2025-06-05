@@ -1,10 +1,12 @@
 const { default: mongoose } = require("mongoose");
 
 const database_url = process.env.DB_URL;
+console.log(database_url);
 
 
 const connectToDB = async () => {
   const connectionUrl = database_url;
+
   await mongoose
     .connect(connectionUrl)
     .then(() => console.log("Job Board Database Connection is Successful"))

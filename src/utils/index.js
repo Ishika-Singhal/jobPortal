@@ -186,12 +186,11 @@ export const postNewJobFormControls=[
 ]
 
 export const initialPostNewJobFormData={
-campanyName:"",
+companyName:"",
 title:"",
 type:"",
 location:"",
 experience:"",
 jobDescription:"",
 skills:"",
-
 }

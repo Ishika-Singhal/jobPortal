@@ -1,4 +1,4 @@
-const { default: mongoose, mongo } = require("mongoose");
+const { default: mongoose } = require("mongoose");
 
 const profileSchema = new mongoose.Schema({
   userId: String,
@@ -33,6 +33,6 @@ const profileSchema = new mongoose.Schema({
 });
 
 const Profile =
-  mongoose.models.Profile || mongoose.model("Profile", profileSchema);
+  mongoose.models?.Profile ?? mongoose.model("Profile", profileSchema);
 
 export default Profile;
