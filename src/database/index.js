@@ -1,7 +1,7 @@
 const { default: mongoose } = require("mongoose");
 
 const database_url = process.env.DB_URL;
-console.log(database_url);
+
 
 
 const connectToDB = async () => {

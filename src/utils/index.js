@@ -154,7 +154,7 @@ export const postNewJobFormControls=[
     placeholder: "Enter your Job Title",
   },
   {
-    name: "jobDescription",
+    name: "description",
     label: "Job Description",
     componentType: "textarea",  
     placeholder: "Enter your Job Description",
@@ -191,6 +191,6 @@ title:"",
 type:"",
 location:"",
 experience:"",
-jobDescription:"",
+description:"",
 skills:"",
 }

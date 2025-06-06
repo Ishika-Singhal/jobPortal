@@ -3,8 +3,9 @@ import React from "react";
 import PostNewJob from "./PostNewJob";
 import Job from "@/models/job";
 import RecruiterJobCard from "./RecruiterJobCard";
+import CandidateJobCard from "./CandidateJobCard";
 
-const JobListing = ({ user, profileInfo, jobList }) => {
+const JobListing = ({ user, profileInfo, jobList , jobApplication }) => {
   return (
     <div className="mx-auto max-w-7xl">
       <div className="flex justify-between items-baseline border-b border-gray-200 pb-6 pt-24">
@@ -29,9 +30,9 @@ const JobListing = ({ user, profileInfo, jobList }) => {
                 {jobList && jobList.length > 0
                   ? jobList.map((jobItem) =>
                       profileInfo?.role === "candidate" ? (
-                        <p>candidate</p>
+                        <CandidateJobCard jobItem={jobItem} keys={jobItem._id} profileInfo={profileInfo} jobApplication={jobApplication}/>
                       ) : (
-                        <RecruiterJobCard jobItem={jobItem} />
+                        <RecruiterJobCard jobItem={jobItem} keys={jobItem._id} profileInfo= {profileInfo} jobApplication={jobApplication}/>
                       )
                     )
                   : null}

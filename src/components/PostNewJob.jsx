@@ -15,7 +15,7 @@ const PostNewJob = ({ profileInfo , user}) => {
   function handlePostNewBtnValid() {
     
     return Object.keys(jobformData).every(
-      (control) => jobformData[control].trim() !== ""
+      (control) => jobformData[control]?.trim() !== ""
     );
   }
 
