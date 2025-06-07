@@ -22,6 +22,8 @@ const page = async () => {
     profileInfo?.role === "candidate"
       ? await fetchApplicationForCandidate(user?.id)
       : fetchApplicationForRecruiter(user?.id);
+
+    
   return (
     <JobListing
       user={JSON.parse(JSON.stringify(user))}

@@ -46,7 +46,7 @@ export async function createJobApplication(data , pathToRevalidate){
 
 export async function fetchApplicationForCandidate(id){
   await connectToDB();
-  const result = await Application.find({candidateUserID : id})
+  const result = await Application.find({candidateUserId : id})
   return JSON.parse(JSON.stringify(result))
 }
 

@@ -32,7 +32,6 @@ const CandidateJobCard = ({ jobItem, keys, profileInfo, jobApplication }) => {
     setShowJobDetailsDrawer(false);
   }
 
-   console.log(jobItem?.skills.split(","));
   return (
     <div key={keys}>
       <Drawer
@@ -98,8 +97,7 @@ const CandidateJobCard = ({ jobItem, keys, profileInfo, jobApplication }) => {
             {jobItem.experience} years
           </h3>
           <div className="flex gap-4 mt-6">
-           
-            {jobItem?.skills.split(","||" "||"and").map((skillItem) => (
+            {jobItem?.skills.split("," || " " || "and").map((skillItem) => (
               <div className="w-[100px] flex justify-center items-center h-[35px] dark:bg-white  bg-black rounded-[4px]">
                 <h2 className="text-[13px] font-medium text-white dark:text-black ">
                   {skillItem}
