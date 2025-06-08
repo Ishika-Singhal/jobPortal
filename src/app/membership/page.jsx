@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Membership = () => {
   return (
-    <div>Membership</div>
-  )
-}
+    <div>
+      <div>Membership Page for recruiter</div>
+    </div>
+  );
+};
 
-export default Membership
+export default Membership;
