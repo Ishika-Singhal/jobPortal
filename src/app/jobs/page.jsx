@@ -21,7 +21,7 @@ const page = async () => {
   const jobApplication =
     profileInfo?.role === "candidate"
       ? await fetchApplicationForCandidate(user?.id)
-      : fetchApplicationForRecruiter(user?.id);
+      : await fetchApplicationForRecruiter(user?.id);
 
     
   return (

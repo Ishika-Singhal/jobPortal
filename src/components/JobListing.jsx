@@ -6,6 +6,7 @@ import RecruiterJobCard from "./RecruiterJobCard";
 import CandidateJobCard from "./CandidateJobCard";
 
 const JobListing = ({ user, profileInfo, jobList , jobApplication }) => {
+
   return (
     <div className="mx-auto max-w-7xl">
       <div className="flex justify-between items-baseline border-b border-gray-200 pb-6 pt-24">
