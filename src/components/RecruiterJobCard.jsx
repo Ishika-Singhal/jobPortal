@@ -13,6 +13,7 @@ const RecruiterJobCard = ({ jobItem, keys, jobApplication }) => {
     showCurrentCandidateDetailsModal,
     setShowCurrentCandidateDetailsModal,
   ] = useState(false);
+
   return (
     <div key={keys}>
       <CommonCard
@@ -20,7 +21,11 @@ const RecruiterJobCard = ({ jobItem, keys, jobApplication }) => {
         title={jobItem?.title}
         description={jobItem?.description}
         footerContent={
-          <Button className="flex h-11 items-center justify-center px-5" onClick={()=>setShowApplicantsDrawer(true)}>
+          <Button className="disabled:opacity-55 flex h-11 items-center justify-center px-5" onClick={()=>setShowApplicantsDrawer(true)}
+          disabled={
+              jobApplication?.filter((item) => item.jobID === jobItem?._id)
+                .length === 0
+            }>
             {
               jobApplication?.filter((item) => item.jobID === jobItem?._id)
                 .length

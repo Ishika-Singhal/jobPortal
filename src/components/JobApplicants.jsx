@@ -15,11 +15,9 @@ const JobApplicants = ({
   jobApplication,
 }) => {
 
-    console.log(jobApplication);
   return (
     <Drawer onOpenChange={setShowApplicantsDrawer} open={showApplicantsDrawer}>
       <DrawerContent className="max-h-[50vh]">
-        {console.log(jobApplication)}
         <ScrollArea className="h-auto overflow-y-auto">
           <CandidateList
             showCurrentCandidateDetailsModal={showCurrentCandidateDetailsModal}
