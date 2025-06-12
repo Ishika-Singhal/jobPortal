@@ -7,7 +7,8 @@ const Activity = async() => {
 
   const user = await currentUser()
   const jobList = await fetchJobForCandidate(user?.id)
-  const jobApplicant = await fetchApplicationForCandidate(user?.id)
+  const jobApplicant = await fetchApplicationForCandidate(user.id)
+  console.log(user);
   console.log(jobApplicant);
   return (
     <CandidateActivity jobList={jobList} jobApplicant={jobApplicant}/>

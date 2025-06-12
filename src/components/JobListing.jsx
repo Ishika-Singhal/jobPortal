@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import PostNewJob from "./PostNewJob";
-import Job from "@/models/job";
 import RecruiterJobCard from "./RecruiterJobCard";
 import CandidateJobCard from "./CandidateJobCard";
 

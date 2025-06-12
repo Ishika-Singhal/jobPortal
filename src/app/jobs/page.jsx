@@ -23,6 +23,7 @@ const page = async () => {
       ? await fetchApplicationForCandidate(user?.id)
       : await fetchApplicationForRecruiter(user?.id);
 
+
     
   return (
     <JobListing

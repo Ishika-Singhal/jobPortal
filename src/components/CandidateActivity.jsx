@@ -11,12 +11,10 @@ const CandidateActivity = ({ jobList, jobApplicant }) => {
       jobApplicant.map((jobApplicantItem) => jobApplicantItem.status).flat(1)
     ),
   ];
-  console.log(jobApplicant);
-  console.log(jobList);
-  console.log(uniqueStatusArray);
+
   return (
     <div className="mx-auto max-w-7xl">
-      <Tabs default="Applied" className="w-full">
+      <Tabs defaultValue="Applied" className="w-full">
         <div className="flex items-baseline justify-between border-b pb-6 pt-24">
           <h1 className="text-4xl font-bold tracking-tight text-gray-950">
             Your Activity
@@ -47,7 +45,7 @@ const CandidateActivity = ({ jobList, jobApplicant }) => {
                     )
                     .map((finalfilteredItem) => (
                       <CommonCard
-                        icon={JobIcon}
+                        icon={<JobIcon/>}
                         title={finalfilteredItem?.title}
                         description={finalfilteredItem?.description}
                       />
