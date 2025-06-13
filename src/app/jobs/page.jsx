@@ -1,4 +1,5 @@
 import {
+  createFilterCategory,
   fetchApplicationForCandidate,
   fetchApplicationForRecruiter,
   fetchJobForCandidate,
@@ -23,7 +24,7 @@ const page = async () => {
       ? await fetchApplicationForCandidate(user?.id)
       : await fetchApplicationForRecruiter(user?.id);
 
-
+  const fetchfiltercategories = await createFilterCategory();
     
   return (
     <JobListing
@@ -31,6 +32,8 @@ const page = async () => {
       profileInfo={profileInfo}
       jobList={jobList}
       jobApplication ={jobApplication}
+      filterCategories={fetchfiltercategories}
+
     />
   );
 };

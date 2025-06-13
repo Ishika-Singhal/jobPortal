@@ -3,9 +3,17 @@ import React from "react";
 import PostNewJob from "./PostNewJob";
 import RecruiterJobCard from "./RecruiterJobCard";
 import CandidateJobCard from "./CandidateJobCard";
+import { filterMenuData } from "@/utils";
 
-const JobListing = ({ user, profileInfo, jobList , jobApplication }) => {
+const JobListing = ({ user, profileInfo, jobList , jobApplication ,filterCategories}) => {
 
+  const filterMenu = filterMenuData.map(item => ({
+    id:item.id,
+    name:item.label,
+    options:[
+      ...new set(filterCategories.map(listItem => listItem[item.id]))
+    ]
+  }))
   return (
     <div className="mx-auto max-w-7xl">
       <div className="flex justify-between items-baseline border-b border-gray-200 pb-6 pt-24">

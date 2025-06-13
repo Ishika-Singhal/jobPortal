@@ -194,3 +194,22 @@ experience:"",
 description:"",
 skills:"",
 }
+
+export  const filterMenuData = [
+    {
+      id:"companyName",
+      name:"Company Name"
+    },
+    {
+      id:"title",
+      name:"Title"
+    },
+    {
+      id:"type",
+      name:"Type"
+    },
+    {
+      id:"location",
+      name:"Location"
+    },
+  ]

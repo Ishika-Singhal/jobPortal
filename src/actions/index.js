@@ -91,3 +91,10 @@ export async function updateJobApplication(data, pathToRevalidate) {
   );
   revalidatePath(pathToRevalidate);
 }
+
+
+export async function createFilterCategory(){
+  await connectToDB();
+  const result = await Job.find({});
+  return JSON.parse(JSON.stringify(result));
+}
