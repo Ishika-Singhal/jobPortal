@@ -6,7 +6,7 @@ import { AlignJustify } from "lucide-react";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 
-const Header = ({ user , profileInfo }) => {
+const Header = ({ user, profileInfo }) => {
   const menuItems = [
     {
       label: "Home",
@@ -31,7 +31,7 @@ const Header = ({ user , profileInfo }) => {
     {
       label: "Activity",
       href: "activity",
-      show: profileInfo?.role === 'candidate',
+      show: profileInfo?.role === "candidate",
     },
     {
       label: "Membership",
@@ -66,13 +66,14 @@ const Header = ({ user , profileInfo }) => {
                   <Link
                     href={menuitem.href}
                     key={index}
+                    onClick={() => sessionStorage.removeItem("filterParams")}
                     className="flex w-full items-center py-2 text-lg font-semibold"
                   >
                     {menuitem.label}
                   </Link>
                 ) : null
               )}
-              <UserButton afterSwitchSessionUrl="/"/>
+              <UserButton afterSwitchSessionUrl="/" />
             </div>
           </SheetContent>
         </Sheet>
@@ -93,7 +94,7 @@ const Header = ({ user , profileInfo }) => {
               </Link>
             ) : null
           )}
-          <UserButton afterSwitchSessionUrl="/"/>
+          <UserButton afterSwitchSessionUrl="/" />
         </nav>
       </header>
     </div>

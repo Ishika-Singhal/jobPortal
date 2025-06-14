@@ -1,3 +1,5 @@
+import qs from "query-string";
+
 export const recruiterOnboardFormControls = [
   {
     name: "name",
@@ -23,7 +25,6 @@ export const initialRecruiterFormData = {
   name: "",
   companyName: "",
   companyRole: "",
-  
 };
 
 export const candidateOnboardFormContols = [
@@ -52,10 +53,10 @@ export const candidateOnboardFormContols = [
     placeholder: "Enter your Current Job Location",
   },
   {
-     name:"preferedJobLocation",
-     label: "Prefered Job Location",
-     componentType: "input",
-     placeholder: "Enter your Prefered Job Location",
+    name: "preferedJobLocation",
+    label: "Prefered Job Location",
+    componentType: "input",
+    placeholder: "Enter your Prefered Job Location",
   },
   {
     name: "currentSalary",
@@ -119,36 +120,34 @@ export const candidateOnboardFormContols = [
   },
 ];
 
-export const initialCandidateFormData={
-   name: "",
-   resume:"",
-   skills: "",
-   perviousCompanies: "",
-   totalExperience: "",
-   college: "",
-   collegeLocation: "",
-   graduatedYear: "",
-   linkedlnProfile: "",
-   githubProfile: "",
-   noticePeriod:"",
-   currentCompany:"",
-   currentJobLocation:"",
-   currentSalary:"",
-   preferedJobLocation:"",
+export const initialCandidateFormData = {
+  name: "",
+  resume: "",
+  skills: "",
+  perviousCompanies: "",
+  totalExperience: "",
+  college: "",
+  collegeLocation: "",
+  graduatedYear: "",
+  linkedlnProfile: "",
+  githubProfile: "",
+  noticePeriod: "",
+  currentCompany: "",
+  currentJobLocation: "",
+  currentSalary: "",
+  preferedJobLocation: "",
+};
 
-}
-
-
-export const postNewJobFormControls=[
+export const postNewJobFormControls = [
   {
     name: "companyName",
     label: "Company Name",
     componentType: "input",
     placeholder: "Enter your Company Name",
-    disabled:true
+    disabled: true,
   },
   {
-    label:"Title",
+    label: "Title",
     name: "title",
     componentType: "input",
     placeholder: "Enter your Job Title",
@@ -156,7 +155,7 @@ export const postNewJobFormControls=[
   {
     name: "description",
     label: "Job Description",
-    componentType: "textarea",  
+    componentType: "textarea",
     placeholder: "Enter your Job Description",
   },
   {
@@ -176,40 +175,59 @@ export const postNewJobFormControls=[
     label: "Skills",
     componentType: "input",
     placeholder: "Enter your Job Skills",
-  },{
+  },
+  {
     name: "type",
     label: "Job Type",
     componentType: "input",
     placeholder: "Enter your Job Type",
+  },
+];
 
+export const initialPostNewJobFormData = {
+  companyName: "",
+  title: "",
+  type: "",
+  location: "",
+  experience: "",
+  description: "",
+  skills: "",
+};
+
+export const filterMenuData = [
+  {
+    id: "companyName",
+    name: "Company Name",
+  },
+  {
+    id: "title",
+    name: "Title",
+  },
+  {
+    id: "type",
+    name: "Type",
+  },
+  {
+    id: "location",
+    name: "Location",
+  },
+];
+
+export function formUrlQuery({ params, dataToAdd }) {
+  let currentURL = qs.parse(params);
+  if (Object.keys(dataToAdd).length > 0) {
+    Object.keys(dataToAdd).map((key) => {
+      if (dataToAdd[key].length === 0) delete currentURL[key];
+      else currentURL[key] = dataToAdd[key].join(",");
+    });
   }
-]
-
-export const initialPostNewJobFormData={
-companyName:"",
-title:"",
-type:"",
-location:"",
-experience:"",
-description:"",
-skills:"",
+  return qs.stringifyUrl(
+    {
+      url: window.location.pathname,
+      query: currentURL,
+    },
+    {
+      skipNull: true,
+    }
+  );
 }
-
-export  const filterMenuData = [
-    {
-      id:"companyName",
-      name:"Company Name"
-    },
-    {
-      id:"title",
-      name:"Title"
-    },
-    {
-      id:"type",
-      name:"Type"
-    },
-    {
-      id:"location",
-      name:"Location"
-    },
-  ]
