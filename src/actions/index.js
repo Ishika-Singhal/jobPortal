@@ -31,13 +31,16 @@ export async function fetchJobForRecruiter(id) {
   return JSON.parse(JSON.stringify(result));
 }
 
-export async function fetchJobForCandidate(filterparams={}) {
+export async function fetchJobForCandidate(filterparams = {}) {
   await connectToDB();
   let updatedParams = {};
-  Object.keys(filterparams).forEach(filterkey => (
-    updatedParams[filterkey] = {$in: filterparams[filterkey].split(',')}
-  ))
-  const result = await Job.find(filterparams && Object.keys(filterparams).length > 0 ? updatedParams:{});
+  Object.keys(filterparams).forEach(
+    (filterkey) =>
+      (updatedParams[filterkey] = { $in: filterparams[filterkey].split(",") })
+  );
+  const result = await Job.find(
+    filterparams && Object.keys(filterparams).length > 0 ? updatedParams : {}
+  );
 
   return JSON.parse(JSON.stringify(result));
 }
@@ -97,9 +100,44 @@ export async function updateJobApplication(data, pathToRevalidate) {
   revalidatePath(pathToRevalidate);
 }
 
-
-export async function createFilterCategory(){
+export async function createFilterCategory() {
   await connectToDB();
   const result = await Job.find({});
   return JSON.parse(JSON.stringify(result));
+}
+
+export async function UpdateProfile(data, pathToRevalidate) {
+  await connectToDB();
+  const {
+    userId,
+    role,
+    email,
+    isPremiumUser,
+    memberShipType,
+    memberShipStartDat,
+    memberShipEndDate,
+    recruiterInfo,
+    candidateInfo,
+    _id,
+  } = data;
+  await Profile.findOneAndUpdate(
+    {
+      _id: _id,
+    },
+    {
+      userId,
+      role,
+      email,
+      isPremiumUser,
+      memberShipType,
+      memberShipStartDat,
+      memberShipEndDate,
+      recruiterInfo,
+      candidateInfo,
+    },
+    {
+      new: true,
+    }
+  );
+  revalidatePath(pathToRevalidate);
 }

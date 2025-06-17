@@ -120,6 +120,22 @@ export const candidateOnboardFormContols = [
   },
 ];
 
+export const initialCandidateAccountFormData = {
+  name: "",
+  skills: "",
+  perviousCompanies: "",
+  totalExperience: "",
+  college: "",
+  collegeLocation: "",
+  graduatedYear: "",
+  linkedlnProfile: "",
+  githubProfile: "",
+  noticePeriod: "",
+  currentCompany: "",
+  currentJobLocation: "",
+  currentSalary: "",
+  preferedJobLocation: "",
+};
 export const initialCandidateFormData = {
   name: "",
   resume: "",
