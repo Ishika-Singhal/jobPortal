@@ -57,7 +57,7 @@ const Header = ({ user, profileInfo }) => {
             </Button>
           </SheetTrigger>
           <SheetContent side="left">
-            <Link href="#" className="mr-6 hidden lg:flex">
+            <Link href="#" className="text-4xl mr-6 hidden lg:flex">
               <h3>JOBSCO</h3>
             </Link>
             <div className="grid gap-2 py-6 px-6">
